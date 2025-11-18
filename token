@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConfigHub Reborn - Fix Auth</title>
+
+    <link href="https://fonts.cdnfonts.com/css/vcr-osd-mono" rel="stylesheet">
+
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background:#000;
+            color:#fff;
+            font-family:'VCR OSD Mono', monospace;
+            font-size:1rem;
+            line-height:1.5;
+            font-weight: 500;             
+            padding:1.5rem;
+            min-height:100vh;
+            display:flex;
+            justify-content:flex-start;
+            align-items:flex-start;
+        }
+        .wrapper { max-width:720px; width:100%; }
+
+        h1 {
+            font-size:1.7rem;
+            letter-spacing:1px;
+            text-align:left;
+            margin-bottom:1.8rem;
+            line-height:1.2;
+        }
+
+        .section { margin-bottom:1.4rem; }
+        .section-title {
+            color:#fff;              
+            font-size:1rem;
+            margin-bottom:0.35rem;
+        }
+
+        ul { list-style:none; padding-left:0; }
+        li { margin:0.25rem 0; }
+
+        a { color:#fff}
+        desc { color: #fff; font-weight: 500 }
+
+        .price { color:#fff; }        
+        .warning { color:#f44; }      
+        .logo { height:1em; vertical-align:middle; margin:0 0.2em; }
+
+        .one-line { height:1.5rem; }   
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <h1>CHUB - Fix auth tutorial</h1>
+
+    <!-- ==================== [ad] ==================== -->
+
+    <div class="section">
+        <div class="section-title">[ConfigHub Reborn]</div>
+        <div>Join ConfigHub Reborn for support and a lot more with the link below </div>
+        <div>    <a href="https://discord.gg/confighub" target="_blank">discord.gg/confighub</a>
+        </div>
+    </div>
+
+
+    <!-- ==================== [fix auth] ==================== -->
+    <div class="section">
+        <div class="section-title">[fix authentification]</div>
+        <div>Following the expiration of java certificates, user can meet the "authentification server are down" error</div>
+    </div>
+
+    <!-- ==================== [how to fix it - w] ==================== -->
+    <div class="section">
+        <div class="section-title">[requirements]</div>
+        <div>Step 1: Donwload Java Eclipse Adoptium 8 on the web or with the link below and install it: </div>
+
+        <div><a href="https://store2.gofile.io/download/web/81d09c5c-2746-480f-bae4-11c1c6f89548/OpenJDK8U-jdk_x64_windows_hotspot_8u432b06%20(1).msi" target="_blank">download for windows</a></div>
+        <div>download for linux -> See linux tutorial below
+        </div>
+    </div>
+
+    <!-- ==================== [w] ==================== -->
+    <div class="section">
+        <div class="section-title">[for windows - official launcher]</div>
+        <div>Navigate to the "Installations" tab</div>
+        <div>Click on your affected game profile</div>
+        <div>Click on more options to reveal additional settings</div>
+        <div>Paste "placeholder" in "java executable"</div>
+        <div>Note that this path is for the provided download and may differ
+        </div>
+    </div>
+
+    <div class="one-line"></div>
+
+    <!-- ==================== [other launcher] ==================== -->
+    <div class="section">
+        <div class="section-title">[for windows - other launchers]</div>
+        <div>Navigate to the settings menu</div>
+        <div>Find the java tab / menu</div>
+        <div>Select or manually input "placeholder" into "java path"</div>
+        <div>Note that this path is for the provided download and may differ
+        </div>
+    </div>
+
+
+    <div class="one-line"></div>
+        <!-- ==================== [linux] ==================== -->
+    <div class="section">
+        <div class="section-title">[for linux - prism]</div>
+        <div>Click on edit</div>
+        <div>Go to settings -> Java</div>
+        <div>Check "java installation" if not checked</div>
+        <div>Go to "adoptium" -> Java 8 -> Select the latest version and download it</div>
+        <div>Go to "auto detect" and find the item that starts with "1.8" and has the word "Eclipse" in the file path </div>
+        <div> Launch the instance as usual
+        </div>
+    </div>
+
+
+    <!-- ==================== [contact] ==================== -->
+    <div class="section">
+        <div class="section-title">[contact]</div>
+        <div style="margin-top:0.4rem;">
+        </div>
+        <div style="margin-top:0.6rem;">
+            <img src="https://cdn-icons-png.flaticon.com/32/5968/5968756.png" alt="Discord" class="logo">
+            <a href="https://discord.gg/confighub" target="_blank">discord.gg/confighub</a>
+        </div>
+    </div>
+
+    <div class="one-line"></div>
+
+    <!-- ==================== [about] ==================== -->
+    <div class="section">
+        <div class="section-title">[credits]</div>
+        <ul>
+            <li>- Me, Khadow, for making this lol</li>
+            <li>- Raven bsv2 for givin that java version</li>
+            <li>- xthonk on discord for the linux section</li>
+        </ul>
+    </div>
+
+</div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
