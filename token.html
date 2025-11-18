@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ConfigHub Reborn - Fix Auth</title>
+    <title>ConfigHub Reborn - Token login guide</title>
 
     <link href="https://fonts.cdnfonts.com/css/vcr-osd-mono" rel="stylesheet">
 
@@ -55,7 +55,7 @@
 <body>
 <div class="wrapper">
 
-    <h1>CHUB - Fix auth tutorial</h1>
+    <h1>CHUB - Token login guide</h1>
 
     <!-- ==================== [ad] ==================== -->
 
@@ -69,28 +69,26 @@
 
     <!-- ==================== [fix auth] ==================== -->
     <div class="section">
-        <div class="section-title">[fix authentification]</div>
-        <div>Following the expiration of java certificates, user can meet the "authentification server are down" error</div>
+        <div class="section-title">[what are tokens?]</div>
+        <div>Tokens are a type of non-full access alts that last 24h</div>
     </div>
 
-    <!-- ==================== [how to fix it - w] ==================== -->
+    <!-- ==================== [How to format tokens] ==================== -->
     <div class="section">
-        <div class="section-title">[requirements]</div>
-        <div>Step 1: Donwload Java Eclipse Adoptium 8 on the web or with the link below and install it: </div>
-
-        <div><a href="https://store2.gofile.io/download/web/81d09c5c-2746-480f-bae4-11c1c6f89548/OpenJDK8U-jdk_x64_windows_hotspot_8u432b06%20(1).msi" target="_blank">download for windows</a></div>
-        <div>download for linux -> See linux tutorial below
-        </div>
+        <div class="section-title">[how to format tokens]</div>
+        <div>Below is how a token look when received from a shop</div>
+        <div>eyiojef(random shit)|accountusername|accountuuid</div>
+        <div>Only the beginning is needed, you must remove |accountusername|accountuuid </div>
     </div>
 
-    <!-- ==================== [w] ==================== -->
+    <!-- ==================== [how to use the format token] ==================== -->
     <div class="section">
-        <div class="section-title">[for windows - official launcher]</div>
-        <div>Navigate to the "Installations" tab</div>
-        <div>Click on your affected game profile</div>
-        <div>Click on more options to reveal additional settings</div>
-        <div>Paste "placeholder" in "java executable"</div>
-        <div>Note that this path is for the provided download and may differ
+        <div class="section-title">[how to login]</div>
+        <div>Option 1: Your client supports it - Just paste the token and hit login</div>
+        <div>Option 2: You use forge/fabric</div>
+        <div>Mods for token login are available for Minecraft 1.8.9  and 1.21.5</div>
+        <div class="one-line"></div>
+        <div>If your client does not support token login or you use any other version, token can't be used
         </div>
     </div>
 
