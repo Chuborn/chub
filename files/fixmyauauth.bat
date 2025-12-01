@@ -17,8 +17,12 @@ if %errorlevel%==0 (
     echo You already patched Myau auth : %LINE%
 ) else (
     echo Fixing Auth: %LINE%
-    echo %LINE% >> C:\Windows\System32\drivers\etc\hosts
+    (
+        echo.
+        echo %LINE%
+    ) >> C:\Windows\System32\drivers\etc\hosts
 )
 
 echo Done.
 pause
+
