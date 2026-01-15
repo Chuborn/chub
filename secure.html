@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1EZ5RPGFP7"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-1EZ5RPGFP7');
-    </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1EZ5RPGFP7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1EZ5RPGFP7');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aqua MFA - Hub</title>
@@ -39,44 +40,20 @@
             border-radius: 4px;
             background: rgba(0, 255, 255, 0.1);
             box-shadow: 
-            0 0 5px rgba(0, 255, 255, 0.4),
-            0 0 10px rgba(0, 255, 255, 0.2),
-            inset 0 0 10px rgba(0, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 255, 255, 0.5);
-            cursor: pointer;
-        }
-
-        .aqua-glow:hover {
-            box-shadow: 
-                0 0 10px rgba(114, 137, 218, 0.4),
-                0 0 20px rgba(114, 137, 218, 0.2),
-                inset 0 0 15px rgba(0, 255, 255, 0.4);
-            background: rgba(114, 137, 218, 0.08);
-            transform: translateY(-1px);
-        }
-        .aqua-glow2 {
-            color: #00FFFF; /* Aqua color */
-            text-decoration: none;
-            font-weight: bold;
-            padding: 5px 15px;
-            border-radius: 4px;
-            background: rgba(0, 255, 255, 0.1);
-            box-shadow: 
-            0 0 5px rgba(0, 255, 255, 0.4),
-            0 0 10px rgba(0, 255, 255, 0.2),
-            inset 0 0 10px rgba(0, 255, 255, 0.1);
+            0 0 10px rgba(0, 255, 255, 0.7),
+            0 0 20px rgba(0, 255, 255, 0.5),
+            inset 0 0 10px rgba(0, 255, 255, 0.3);
             transition: all 0.3s ease;
             border: 1px solid rgba(0, 255, 255, 0.5);
         }
 
-        .aqua-glow2:hover {
-            box-shadow: 
-                0 0 10px rgba(0, 255, 255, 0.5),
-                0 0 20px rgba(0, 255, 255, 0.2),
-                inset 0 0 15px rgba(0, 255, 255, 0.4);
-            background: rgba(0, 255, 255, 0.2);
-            transform: translateY(-1px);
+    .aqua-glow:hover {
+        box-shadow: 
+            0 0 15px rgba(0, 255, 255, 0.9),
+            0 0 30px rgba(0, 255, 255, 0.7),
+            inset 0 0 15px rgba(0, 255, 255, 0.4);
+        background: rgba(0, 255, 255, 0.2);
+        transform: translateY(-2px);
         }
         h1 {
             font-size:1.7rem;
@@ -101,7 +78,6 @@
             color:#fff;              
             font-size: 1.9rem;;
             margin-bottom:0.35rem;
-            text-align: center;
         }
 
 
@@ -117,46 +93,64 @@
 
         .one-line { height:1.5rem; }   
     </style>
-    
-    <!-- External JavaScript file will be loaded here -->
-    <script src="script.js" defer></script>
 </head>
 <body>
 <div class="wrapper">
 
     <h1>AQUA MFA</h1>
+
+    <!-- ==================== [ad] ==================== -->
+    <div class="section">
+        <div class="section-title"><a href="https://mfa.watchdog.gay" target="_self">[join us on Discord]</a></div>
+        <div class="one-line"></div>
+    </div>
+
+
     <!-- ==================== [How to format tokens] ==================== -->
+
 
     <div class="section">
         <div class="one-line"></div>
-        <div class="grand">
-            <a href="https://mfa.watchdog.gay" class="aqua-glow2" target="_self">discord</a>
-            Go to Minecraft.net and click "login" - 
-            <a id="nextStepBtn" href="#" class="aqua-glow">next step</a>
-        </div>
+<div class="grand">
+  Go to Minecraft.net and click "login" - 
+  <a href="/files/aqua/step2.html" target="_self" class="aqua-glow">next step</a>
+</div>
         
         <div class="one-line"></div>
-        <img id="stepImage" src="files/aqua/step1.jpg" alt="">
+        <img src="files/aqua/step1.jpg" alt="">
+
+
     </div>
+
+
+
+    
+
 
     <!-- ==================== [contact] ==================== -->
     <div class="section">
-        <div>
-            [contact]
+        <div class="section-title">[contact]</div>
+        <div style="margin-top:0.4rem;">
+        </div>
+        <div style="margin-top:0.6rem;">
             <img src="https://cdn-icons-png.flaticon.com/32/5968/5968756.png" alt="Discord" class="logo">
             <a href="https://mfa.watchdog.gay" target="_blank">https://discord.gg/sNdMBubnYB</a>
         </div>
     </div>
 
+    <div class="one-line"></div>
+
     <!-- ==================== [about] ==================== -->
     <div class="section">
-        <div>
-            [credits]
-            Me, Khadow, for making this lol
-            Kais and Cheatin, ma boys
-        </div>
+        <div class="section-title">[credits]</div>
+        <ul>
+            <li>- Me, Khadow, for making this lol</li>
+            <li>- Kais and Cheatin, ma boys</li>
+        </ul>
     </div>
 
 </div>
 </body>
+
+
 </html>
