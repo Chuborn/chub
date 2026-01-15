@@ -14,12 +14,24 @@ document.addEventListener('DOMContentLoaded', function() {
             image: 'files/aqua/step1.jpg'
         },
         {
-            text: 'Enter your email and password',
-            image: 'files/aqua/step2.jpg'
+            text: 'Select Microsoft, enter your email and click next',
+            image: 'files/aqua/step2.png'
         },
         {
-            text: 'Complete the authentication process',
-            image: 'files/aqua/step3.jpg'
+            text: 'Say no to any popup and click use password',
+            image: 'files/aqua/step3.png'
+        }
+        {
+            text: 'Select "Forgot password"',
+            image: 'files/aqua/step4.png'
+        }
+        {
+            text: 'Select "I don't have any of these",
+            image: 'files/aqua/step5.png'
+        }
+        {
+            text: 'Enter your recovery code",
+            image: 'files/aqua/step6.png'
         }
     ];
     
