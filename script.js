@@ -20,17 +20,17 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             text: 'Say no to any popup and click use password',
             image: 'files/aqua/step3.png'
-        }
+        }, // ← ADDED MISSING COMMA
         {
             text: 'Select "Forgot password"',
             image: 'files/aqua/step4.png'
-        }
+        }, // ← ADDED MISSING COMMA
         {
-            text: 'Select "I don't have any of these",
+            text: 'Select "I don\'t have any of these"', // ← ESCAPED APOSTROPHE
             image: 'files/aqua/step5.png'
-        }
+        }, // ← ADDED MISSING COMMA
         {
-            text: 'Enter your recovery code",
+            text: 'Enter your recovery code', // ← REMOVED EXTRA QUOTE
             image: 'files/aqua/step6.png'
         }
     ];
