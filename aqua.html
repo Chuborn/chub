@@ -62,6 +62,19 @@
 
         .price { color:#fff; }        
         .logo { height:1em; vertical-align:middle; margin:0 0.2em; }
+        .khadow {
+            background: linear-gradient(90deg, #0066ff, #00ccff, #0066ff);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeBlue 3s ease-in-out infinite;
+        }
+        @keyframes fadeBlue {
+            0% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+            100% { background-position: 0% center; }
+        }
 
         .one-line { height:1.5rem; }   
     </style>
@@ -69,7 +82,12 @@
 <body>
 <div class="wrapper">
 
-    <h1>AQUA MFA</h1>
+    <h1>Watchdog.gay</h1>
+    <div class="section">
+        <div>By <l class="khadow">Khadow </l>with love</div>
+    </div>
+
+    <h1 style="margin-top: 1rem;">AQUA MFA</h1>
 
     <!-- ==================== [ad] ==================== -->
     <div class="section">
