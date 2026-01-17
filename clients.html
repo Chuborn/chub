@@ -37,7 +37,6 @@
             font-size:1.7rem;
             letter-spacing:1px;
             text-align:left;
-            margin-bottom:1.8rem;
             line-height:1.2;
         }
 
@@ -70,6 +69,8 @@
             50% { background-position: 100% center; }
             100% { background-position: 0% center; }
         }
+        .client-item { cursor:pointer; transition: background 0.2s, box-shadow 0.2s; font-size: 0.95rem; }
+        .client-item:hover { background: rgba(0, 102, 255, 0.15); box-shadow: 0 0 10px rgba(0, 102, 255, 0.3); }
 
         .one-line { height:1.5rem; }   
     </style>
@@ -81,21 +82,12 @@
     <div class="section">
         <div>By <l class="khadow">Khadow </l>with love</div>
     </div>
-    <h1 style="margin-top: 1rem;">CHUB - Client list</h1>
-
-    <!-- ==================== [ad] ==================== -->
-
-    <div class="section">
-        <div class="section-title"><a href="https://watchdog.gay" target="_blank">[home page] <a href="https://discord.gg/whCaTa6YWt" target="_blank">[ConfigHub Discord]</a></div>
-        <div class="one-line"></div>
-    </div>
-
 
     <!-- ==================== [free client] ==================== -->
     <div class="section">
         <div class="section-title">[free clients]</div>
-        <div>[free] raven b3 [ghost] -> <a href="/files/reviews/B3.html" target="_blank">[review]</a> / <a href="/files/reviews/B3.html" target="_blank">[download]</a> - reviews/download soon</div>
-        <div>[free] Cryptix [hypixel] [blatant] -> <a href="/files/reviews/cryptix.html" target="_blank">[review]</a> / <a href="https://discord.gg/yTXTA2gCfE" target="_blank">[download]</a> </div>
+        <div class="client-item" data-href="/files/reviews/B3.html">[free] raven b3 [ghost]</div>
+        <div class="client-item" data-href="/files/reviews/cryptix.html">[free] Cryptix [hypixel] [blatant]</div>
     </div>
 
     <div class="one-line"></div>
@@ -103,21 +95,21 @@
     <!-- ==================== [paid client] ==================== -->
     <div class="section">
         <div class="section-title">[paid clients]</div>
-        <div>[$20] Opai [hypixel] [blatant] -> <a href="/files/reviews/opai.html" target="_blank">[review]</a> / <a href="https://discord.gg/ExtKrTUabE" target="_blank">[purchase]</a> </div>
-        <div>[$23] Neon [multiserver] [blatant] -> <a href="/files/reviews/neon.html" target="_blank">[review]</a> / <a href="https://neonclient.com" target="_blank">[purchase]</a> (Review out of date)</div>
-        <div>[$24] Myau [hypixel] [hybrid-blatant] -> <a href="/files/reviews/myau.html" target="_blank">[review]</a> / <a href="/files//reviews/buymyau.html" target="_blank">[purchase]</a> (use code khadow for 5% off)</div>
-        <div>[$25] Ambient [Clown] [Clown] -> <a href="/files/image.png" target="_blank">[nice client badaim]</a>
-        <div>[$30] Astralis [hypixel-cc] [hybrid-blatant] -> <a href="/files/reviews/astralis.html" target="_blank">[review]</a> / <a href="https://astralis.watchdog.gay" target="_blank">[purchase]</a> (use code khadow for 5% off)</div>
-        <div>[$33] Rise [multiserver] [blatant] -> <a href="/files/reviews/rise.html" target="_blank">[review]</a> / <a href="https://riseclient.com" target="_blank">[purchase]</a> (use code khadow for 5% off)</div>
+        <div class="client-item" data-href="/files/reviews/opai.html">[$20] Opai [hypixel] [blatant]</div>
+        <div class="client-item" data-href="/files/reviews/neon.html">[$23] Neon [multiserver] [blatant]</div>
+        <div class="client-item" data-href="/files/reviews/myau.html">[$24] Myau [hypixel] [hybrid-blatant] (use code khadow for 5% off)</div>
+        <div class="client-item" data-href="/files/image.png">[$25] Ambient [Clown] [Clown]</div>
+        <div class="client-item" data-href="/files/reviews/astralis.html">[$30] Astralis [hypixel-cc] [hybrid-blatant] (use code khadow for 5% off)</div>
+        <div class="client-item" data-href="/files/reviews/rise.html">[$33] Rise [multiserver] [blatant] (use code khadow for 5% off)</div>
 
     </div>
     <div class="one-line"></div>
     <!-- ==================== [ghost client] ==================== -->
     <div class="section">
         <div class="section-title">[ghost clients]</div>
-        <div>[$35] Vape [ghost-hybrid] -> <a href="/files/reviews/vape.html" target="_blank">[review]</a> / <a href="https://vape.gg/mega" target="_blank">[purchase]</a> </div>
-        <div>[$100] Drip Lite [ghost] -> <a href="/files/reviews/drip.html" target="_blank">[review]</a> / <a href="https://getd.rip/DQEBZZXD" target="_blank">[purchase]</a> </div>
-        <div>[$75/Year (50 on sale)] Slinky [ghost-hybrid] -> <a href="/files/reviews/slinky.html" target="_blank">[review]</a> / <a href="slinky.gg" target="_blank">[purchase]</a> </div>
+        <div class="client-item" data-href="/files/reviews/vape.html">[$35] Vape [ghost-hybrid]</div>
+        <div class="client-item" data-href="/files/reviews/drip.html">[$100] Drip Lite [ghost]</div>
+        <div class="client-item" data-href="/files/reviews/slinky.html">[$75/Year (50 on sale)] Slinky [ghost-hybrid]</div>
 
     </div>
 
@@ -142,7 +134,7 @@
         </div>
         <div style="margin-top:0.6rem;">
             <img src="https://cdn-icons-png.flaticon.com/32/5968/5968756.png" alt="Discord" class="logo">
-            <a href="https://discord.gg/whCaTa6YWt" target="_blank">discord.gg/confighub</a>
+            <a href="https://discord.gg/whCaTa6YWt" target="_self">discord.gg/confighub</a>
         </div>
     </div>
 
@@ -157,9 +149,23 @@
     </div>
 
 </div>
+
+<script>
+    document.querySelectorAll('.client-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const href = this.getAttribute('data-href');
+            if (href) {
+                window.location.href = href;
+            }
+        });
+    });
+</script>
+
 </body>
 
 </html>
+
+
 
 
 
