@@ -55,13 +55,81 @@
         li { margin:0.25rem 0; }
 
         a { color:#fff}
+        a2 { color:#0066ff; text-decoration:none; text-shadow: 0 0 2px #0066ff; display:inline; cursor:pointer; }
+        a2:hover { text-decoration:underline; text-shadow: 0 0 15px #0066ff, 0 0 25px #00ccff; }
         desc { color: #fff; font-weight: 500 }
         r { color:#f44; }      
 
         .price { color:#fff; }        
         .logo { height:1em; vertical-align:middle; margin:0 0.2em; }
+        .khadow {
+            background: linear-gradient(90deg, #0066ff, #00ccff, #0066ff);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeBlue 3s ease-in-out infinite;
+        }
+        @keyframes fadeBlue {
+            0% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+            100% { background-position: 0% center; }
+        }
 
         .one-line { height:1.5rem; }   
+
+        /* dropdown / FAQ-style blocks, styled to match main site */
+        details {
+            margin: 0.8rem 0 0.4rem 0;
+            border-top: 1px solid #333;
+            padding-top: 0.5rem;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            user-select: none;
+            display: block;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            transition: background 0.2s, box-shadow 0.2s, padding-left 0.2s;
+        }
+
+        summary::before {
+            content: "▸ ";
+            display: inline-block;
+            transition: transform 0.3s;
+            margin-right: 0.3rem;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        summary:hover {
+            background: rgba(0, 102, 255, 0.15);
+            box-shadow: 0 0 10px rgba(0, 102, 255, 0.3);
+            padding-left: 0.5rem;
+        }
+
+        details[open] summary {
+            margin-bottom: 0.5rem;
+        }
+
+        details > :not(summary) {
+            animation: slideDown 0.2s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+            }
+            to {
+                opacity: 1;
+                max-height: 500px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -70,13 +138,6 @@
     <h1>Watchdog.gay</h1>
     <div class="section">
         <div>By <l class="khadow">Khadow </l>with love</div>
-    </div>
-    <h1 style="margin-top: 1rem;">CHUB - Token login guide</h1>
-
-    <!-- ==================== [ad] ==================== -->
-    <div class="section">
-        <div class="section-title"><a href="https://watchdog.gay" target="_self">[home page] <a href="https://discord.gg/whCaTa6YWt" target="_self">[ConfigHub Discord]</a></div>
-        <div class="one-line"></div>
     </div>
 
 
@@ -88,78 +149,61 @@
     </div>
 
     <!-- ==================== [How to format tokens] ==================== -->
-    <div class="section">
-        <div class="section-title">[1- how to format tokens]</div>
-        <div>Token are a long string of letters that start with "ey".</div>
-        <div>When you use a shop, you can receive it in multiple form</div>
-        <div class="one-line"></div>
-        <div>Case 1: They sometime come preformated (nicealt/zz/etc) but can also be unformated -> Proceed to step 2</div>
-        <div>Case 2: They can come with |accountusername|accountuuid at the end; it must be removed manually or with <a href="https://tools.zzxgp.me/mctoken" target="_self">this website</a> -> Proceed to step 2</div>
-    </div>
+
+    
 
     <!-- ==================== [how to use the format token] ==================== -->
-    <div class="section">
-        <div class="section-title">[2- how to login]</div>
-        <div>Option 1: Your client supports it</div>
-        <div>Option 2: You use forge / fabric (1.8.9 or 1.21.x)</div> 
-        <div>Option 3: You use Lunar Client or any other version of minecraft
 
-        <div class="one-line"></div>
-    </div>
+    <details>
+        <summary>[How to format tokens]</summary>
+        <div>Depending on checker, shop bot, etc; Token can be formated or unformated</div>
+        <div>Token are a long string of letters that start with "ey"</div>
+        <div>They sometime come with unwanted text that prevent them from working "</div>
+        <div>If they do, it needs to be removed manually or with <a href="https://tools.zzxgp.me/mctoken" target="_self">this website</a></div>
+        <div>Manually = remove |accountusername|accountuuid at the end</div>
+
+    </details>
 
 
-
-    <!-- ==================== [option 1] ==================== -->
-    <div class="section">
-        <div class="section-title">[option 1 - client supports it]</div>
+    <!-- ==================== [options] ==================== -->
+    <details>
+        <summary>[option 1 - client supports it]</summary>
         <div>Some clients (like rise) support token login natively</div>
         <div>Just paste the token in "session" or "refresh" token</div>
-    <div class="one-line"></div>
+    </details>
 
-
-    <!-- ==================== [option 2] ==================== -->
-    <div class="section">
-        <div class="section-title">[option 2 - forge / fabric]</div>
+    <details>
+        <summary>[option 2 - forge / fabric]</summary>
         <div>Download the mod for your minecraft version below</div>
         <div>On the server selector, a box on the top right allows you to paste and login</div>
-    <div class="one-line"></div>    
-</div>
-    <!-- ==================== [option 3] ==================== -->
-    <div class="section">
-        <div class="section-title">[option 3 - lunar client / other mc versions]</div>
-        <div>Download the lunar token login tool below</div>
-        <div>Run it while Lunar Launcher is closed</div>
-        <div>Paste your token and press enter; you can now use any version from Lunar Launcher</div>
-
-
-    <div class="one-line"></div>
-</div>
-
-
-
-
-    <!-- ==================== [mod links] ==================== -->
-    <div class="section">
         <div class="section-title">[files download]</div>
         <div>[1.8.9] - <a href="/files/tokenlogin2.jar" target="_self">direct download</a> - <a href="https://github.com/yx-zero/tokenlogin" target="_self">github link</a>  </div>
         <div>[1.20/1.21.5] - <a href="https://authtoken.villainsrule.xyz" target="_self">download / source</a> 
         <div>[1.21.10] - <a href="/files/tokenlogin121.jar" target="_self">direct download</a> - <a href="https://github.com/yx-zero/tokenlogin-fabric/releases/tag/v1.1" target="_self">github link</a> 
+    </details>
+
+    <details>
+        <summary>[option 3 - lunar client / other mc versions]</summary>
+        <div>Download the lunar token login tool below</div>
+        <div>Run it while Lunar Launcher is closed</div>
+        <div>Paste your token and press enter; you can now use any version from Lunar Launcher</div>
         <div>[lunar launcher - all mc versions] - <a href="/files/lunartokenlogin.exe" target="_self">direct download</a> - <a href="https://mega.nz/file/nZt2CbLI#htt-6XViYQLs6SlOKup6LMUUHoQ9sbDdTyXUGNvOi5I" target="_self">source code</a> 
-        <div>Credits to all these tools goes to yx_zero / discord.gg/zzxgp</div>
-        </div>
-    </div>
+
+    </details>
+
+
+
 
 
     <div class="one-line"></div>
 
-    <!-- ==================== [contact] ==================== -->
     <div class="section">
         <div class="section-title">[contact]</div>
         <div style="margin-top:0.4rem;">
         </div>
         <div style="margin-top:0.6rem;">
             <img src="https://cdn-icons-png.flaticon.com/32/5968/5968756.png" alt="Discord" class="logo">
-            <a href="https://discord.gg/whCaTa6YWt" target="_self">discord.gg/confighub</a>
+            <a2 href="https://discord.gg/whCaTa6YWt" target="_self">discord.gg/confighub</a2>
         </div>
     </div>
 
@@ -167,7 +211,7 @@
 
     <!-- ==================== [about] ==================== -->
     <div class="section">
-        <div class="section-title">[credits]</div>
+        <div class="section-title">[about]</div>
         <ul>
             <li>- Me, Khadow, for making this lol</li>
             <li>- Yx_Zero and discord.gg/zzxgp for making some of these mod</li>
@@ -179,7 +223,6 @@
 </body>
 
 </html>
-
 
 
 

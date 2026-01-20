@@ -56,6 +56,8 @@
         li { margin:0.25rem 0; }
 
         a { color:#fff}
+        a2 { color:#0066ff; text-decoration:none; text-shadow: 0 0 2px #0066ff; display:inline; cursor:pointer; }
+        a2:hover { text-decoration:underline; text-shadow: 0 0 15px #0066ff, 0 0 25px #00ccff; }
         desc { color: #fff; font-weight: 500 }
         r { color:#f44; }      
 
@@ -77,30 +79,28 @@
 
         .one-line { height:1.5rem; }
         
+        /* dropdown / FAQ-style blocks, styled to match main site */
         details {
-            margin: 1rem 0;
-            border-left: 3px solid #0066ff;
-            padding: 1rem;
-            background: rgba(0, 102, 255, 0.05);
-            border-radius: 4px;
+            margin: 0.8rem 0 0.4rem 0;
+            border-top: 1px solid #333;
+            padding-top: 0.5rem;
         }
 
         summary {
             cursor: pointer;
             font-weight: bold;
             user-select: none;
-            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
             display: block;
-            padding: 0.5rem;
             font-size: 1.1rem;
             letter-spacing: 0.5px;
+            transition: background 0.2s, box-shadow 0.2s, padding-left 0.2s;
         }
 
         summary::before {
             content: "▸ ";
             display: inline-block;
             transition: transform 0.3s;
-            margin-right: 0.5rem;
+            margin-right: 0.3rem;
         }
 
         details[open] summary::before {
@@ -110,14 +110,15 @@
         summary:hover {
             background: rgba(0, 102, 255, 0.15);
             box-shadow: 0 0 10px rgba(0, 102, 255, 0.3);
+            padding-left: 0.5rem;
         }
 
         details[open] summary {
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
 
         details > :not(summary) {
-            animation: slideDown 0.3s ease-out;
+            animation: slideDown 0.2s ease-out;
         }
 
         @keyframes slideDown {
@@ -163,7 +164,7 @@
 
     <!-- ==================== [option 1] ==================== -->
     <details>
-        <summary>1- direct cookies support]</summary>
+        <summary>[1- direct cookies support]</summary>
         <div>Some clients (like rise, astralis, etc) support direct use of cookies</div>
         <div>In their alt manager, simply go in cookies, select the file and press login</div>
         <div>If it fails or the client doesn't support it, don't worry -> option 3</div>
@@ -205,8 +206,8 @@
 
 
 
-    <div class="one-line"></div>
 
+    
     <!-- ==================== [contact] ==================== -->
   <div class="section">
         <div class="section-title">[contact]</div>
@@ -214,7 +215,7 @@
         </div>
         <div style="margin-top:0.6rem;">
             <img src="https://cdn-icons-png.flaticon.com/32/5968/5968756.png" alt="Discord" class="logo">
-            <a2 href="https://https://discord.gg/whCaTa6YWt" target="_self">discord.gg/confighub</a2>
+            <a2 href="https://discord.gg/whCaTa6YWt" target="_self">discord.gg/confighub</a2>
         </div>
     </div>
 
