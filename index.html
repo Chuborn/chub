@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1EZ5RPGFP7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1EZ5RPGFP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-1EZ5RPGFP7');
-</script>
+        gtag('config', 'G-1EZ5RPGFP7');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>watchdog.gay - homepage</title>
@@ -28,54 +29,138 @@
     <link href="https://fonts.cdnfonts.com/css/vcr-osd-mono" rel="stylesheet">
 
     <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            background:#000;
-            color:#fff;
-            font-family: 'Perfect DOS VGA 437', monospace;
-            font-size:1.2rem;
-            line-height:1.5;
-            font-weight: 500;             
-            padding:1.5rem;
-            min-height:100vh;
-            display:flex;
-            justify-content:flex-start;
-            align-items:flex-start;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .wrapper { width:100%; }
+
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Perfect DOS VGA 437', monospace;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            font-weight: 500;
+            padding: 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .wrapper {
+            width: 100%;
+        }
 
         h1 {
-            font-size:2rem;
-            letter-spacing:1px;
-            text-align:left;
-            margin-bottom:0rem;
-            line-height:1.2;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            text-align: left;
+            margin-bottom: 0rem;
+            line-height: 1.2;
         }
 
-        .section { margin-bottom:1.4rem; }
+        .section {
+            margin-bottom: 1.4rem;
+        }
+
         .section-title {
-            color:#fff;              
-            font-size:1.2rem;
-            margin-bottom:0.35rem;
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 0.35rem;
         }
+
         .petit {
-            color:#fff;              
-            font-size:1.05rem;
+            color: #fff;
+            font-size: 1.05rem;
         }
 
-        ul { list-style:none; padding-left:0; }
-        li { margin:0.25rem 0; }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
 
-        a { color:#fff}
-        a2 { color:#0066ff; text-decoration:none; text-shadow: 0 0 2px #0066ff; display:inline; cursor:pointer; }
-        a2:hover { text-decoration:underline; text-shadow: 0 0 15px #0066ff, 0 0 25px #00ccff; }
-        .step { cursor:pointer; transition: background 0.2s, box-shadow 0.2s; }
-        .step:hover { background: rgba(0, 102, 255, 0.15); box-shadow: 0 0 10px rgba(0, 102, 255, 0.3); padding-left: 0.5rem; }
-        desc { color: #fff; font-weight: 500 }
+        li {
+            margin: 0.25rem 0;
+        }
 
-        .price { color:#fff; }        
-        .warning { color:#f44; }      
-        .logo { height:1em; vertical-align:middle; margin:0 0.2em; }
+        a {
+            color: #fff
+        }
+
+        a2 {
+            color: #0066ff;
+            text-decoration: none;
+            text-shadow: 0 0 2px #0066ff;
+            display: inline;
+            cursor: pointer;
+        }
+
+        a2:hover {
+            text-decoration: underline;
+            text-shadow: 0 0 15px #0066ff, 0 0 25px #00ccff;
+        }
+
+        /* Hover button items - matching expandable section style */
+        .step {
+            cursor: pointer;
+            margin: 0.3rem 0;
+            border-left: 2px solid #333;
+            padding-left: 0.5rem;
+            transition: background 0.2s, box-shadow 0.2s, padding-left 0.2s, border-color 0.2s;
+        }
+
+        .step:hover {
+            background: rgba(0, 102, 255, 0.15);
+            box-shadow: 0 0 10px rgba(0, 102, 255, 0.3);
+            padding-left: 1rem;
+            border-color: #0066ff;
+        }
+
+        .step-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-title::before {
+            content: "▸ ";
+            display: inline-block;
+            transition: transform 0.2s;
+            margin-right: 0.3rem;
+        }
+
+        .step:hover .step-title::before {
+            transform: translateX(0.3rem);
+        }
+
+        .step-desc {
+            font-size: 0.95rem;
+            color: #ccc;
+            margin-left: 1.2rem;
+        }
+
+        desc {
+            color: #fff;
+            font-weight: 500
+        }
+
+        .price {
+            color: #fff;
+        }
+
+        .warning {
+            color: #f44;
+        }
+
+        .logo {
+            height: 1em;
+            vertical-align: middle;
+            margin: 0 0.2em;
+        }
+
         .khadow {
             background: linear-gradient(90deg, #0066ff, #00ccff, #0066ff);
             background-size: 200% 100%;
@@ -84,156 +169,146 @@
             background-clip: text;
             animation: fadeBlue 3s ease-in-out infinite;
         }
+
         @keyframes fadeBlue {
-            0% { background-position: 0% center; }
-            50% { background-position: 100% center; }
-            100% { background-position: 0% center; }
+            0% {
+                background-position: 0% center;
+            }
+
+            50% {
+                background-position: 100% center;
+            }
+
+            100% {
+                background-position: 0% center;
+            }
         }
-        .one-line { height:1.5rem; }   
+
+        .one-line {
+            height: 1.5rem;
+        }
     </style>
 </head>
+
 <body>
-<div class="wrapper">
+    <div class="wrapper">
 
-    <h1>Watchdog.gay</h1>
-    <div class="section">
-        <div>By <l class="khadow">Khadow </l>with love</div>
+        <h1>Watchdog.gay</h1>
+        <div class="section">
+            <div>By <l class="khadow">Khadow </l>with love</div>
+        </div>
+
+
+
+
+
+
+        <div class="section">
+            <div class="section-title">[a guide to cheating]</div>
+
+            <div style="margin:0.8rem 0 0.4rem 0; font-weight:bold;">▸ The Basics</div>
+            <div>You need: A client + a VPN + alts</div>
+
+            <div class="step" data-href="clients">
+                <div class="step-title">Step 1: Choose a Client</div>
+                <div class="step-desc">Choosing the right client can be difficult. Find my personal reviews here</div>
+            </div>
+
+            <div class="step" data-href="https://watchdog.gay/vpn">
+                <div class="step-title">Step 2: Get a VPN</div>
+                <div class="step-desc">Cheap? Bypass IP bans? Prevent security bans? Here is a guide and some great
+                    options</div>
+            </div>
+            <div class="step" data-href="https://alts.watchdog.gay">
+                <div class="step-title">Step 3: Buy Alts</div>
+                <div class="step-desc">There are a ton of alt shops of variable quality and price. Here is my complete
+                    list with recommendations</div>
+            </div>
+
+            <div class="step" data-href="https://watchdog.gay/howtoalts">
+                <div class="step-title">Step 4: Learn How to Use Them</div>
+                <div class="step-desc">How to use these alts that you buy? Here is a step by step guide</div>
+            </div>
+        </div>
+
+
+        <div class="one-line"></div>
+
+
+        <div class="section">
+            <div class="section-title">[configs and scripts]</div>
+            <div>Configs, Clients, Scripts and more on our discord:
+                <img src="https://cdn-icons-png.flaticon.com/32/5968/5968756.png" alt="Discord" class="logo">
+                <a2 href="https://discord.gg/whCaTa6YWt" target="_self">discord.gg/confighub</a2>
+            </div>
+            <div>Do you own Augustus client and want some great configs? Check out <a2 href="https://cfg.bet"
+                    target="_self">cfg.bet</a2>
+            </div>
+
+        </div>
+        <div class="section">
+            <div class="section-title">[guides]</div>
+
+            <div class="step" data-href="https://watchdog.gay/aqua">
+                <div class="step-title">How-to: AQUA MFA</div>
+                <div class="step-desc">How to buy or sell your mfas on AQUA MFA, the shop I co-own &lt;3</div>
+            </div>
+            <div class="step" data-href="https://secure.watchdog.gay">
+                <div class="step-title">How to secure a MFA you bought?</div>
+                <div class="step-desc">An (unfinished) guide so you never lock em!</div>
+            </div>
+
+            <div class="step" data-href="https://Watchdog.gay/fixmyau">
+                <div class="step-title">Fix issues with Myau login</div>
+                <div class="step-desc">Login does nothing? Connection error? Finally a fix for these frustrating errors
+                </div>
+            </div>
+            <div class="step" data-href="https://Watchdog.gay/javafix">
+                <div class="step-title">"Auth servers are down" - "Use a jdk for scripting" (DOWNLOAD CURRENTLY DEAD)
+                </div>
+                <div class="step-desc">A guide to install a more up-to-date and feature-rich version of JAVA to fix
+                    these errors</div>
+            </div>
+        </div>
+
+        <div class="one-line"></div>
+
+        <!-- ==================== [contact] ==================== -->
+        <div class="section">
+            <div class="section-title">[contact]</div>
+            <div style="margin-top:0.4rem;">
+            </div>
+            <div style="margin-top:0.6rem;">
+                <img src="https://cdn-icons-png.flaticon.com/32/5968/5968756.png" alt="Discord" class="logo">
+                <a2 href="https://discord.gg/whCaTa6YWt" target="_self">discord.gg/confighub</a2>
+            </div>
+        </div>
+
+        <div class="one-line"></div>
+
+        <!-- ==================== [about] ==================== -->
+        <div class="section">
+            <div class="section-title">[about]</div>
+            <ul>
+                <li>- A website made by Khadow, no ai trust</li>
+                <li>- Confighub Reborn - A concept from Zambos</li>
+                <li>- A copy of minesense.pub - Arithmo plz come back we need you</li>
+            </ul>
+        </div>
+
     </div>
 
-
-
-
-
-
-    <div class="section">
-        <div class="section-title">[a guide to cheating]</div>
-        
-        <div style="margin:0.8rem 0 0.4rem 0; font-weight:bold;">▸ The Basics</div>
-        <div>You need: A client + a VPN + alts</div>
-        
-        <div class="step" data-href="clients" style="margin:0.8rem 0 0.4rem 0; border-top:1px solid #333; padding-top:0.5rem;">
-            <div style="font-weight:bold;">▸ Step 1: Choose a Client</div>
-            <div>Choosing the right client can be difficult. Find my personal reviews here</div>
-        </div>
-        
-        <div class="step" data-href="https://watchdog.gay/vpn" style="margin:0.8rem 0 0.4rem 0; border-top:1px solid #333; padding-top:0.5rem;">
-            <div style="font-weight:bold;">▸ Step 2: Get a VPN</div>
-            <div>Cheap? Bypass IP bans? Prevent security bans? Here is a guide and some great options</div>
-        </div>
-        <div class="step" data-href="https://alts.watchdog.gay" style="margin:0.8rem 0 0.4rem 0; border-top:1px solid #333; padding-top:0.5rem;">
-            <div style="font-weight:bold;">▸ Step 3: Buy Alts</div>
-            <div>There are a ton of alt shops of variable quality and price. Here is my complete list with recommendations</div>
-        </div>
-        
-        <div class="step" data-href="https://watchdog.gay/howtoalts" style="margin:0.8rem 0 0.4rem 0; border-top:1px solid #333; padding-top:0.5rem;">
-            <div style="font-weight:bold;">▸ Step 4: Learn How to Use Them</div>
-            <div>How to use these alts that you buy? Here is a step by step guide</div>
-        </div>
-    </div>
-
-
-    <div class="one-line"></div>
-
-
-    <div class="section">
-        <div class="section-title">[configs and scripts]</div>
-        <div>Configs, Clients, Scripts and more on our discord: 
-            <img src="https://cdn-icons-png.flaticon.com/32/5968/5968756.png" alt="Discord" class="logo">
-            <a2 href="https://discord.gg/whCaTa6YWt" target="_self">discord.gg/confighub</a2>
-        </div>
-        <div>Do you own Augustus client and want some great configs? Check out <a2 href="https://cfg.bet" target="_self">cfg.bet</a2></div>
-        
-</div>
-    <div class="section">
-        <div class="section-title">[guides]</div>
-
-        <div class="step" data-href="https://watchdog.gay/aqua" style="margin:0.8rem 0 0.4rem 0; border-top:1px solid #333; padding-top:0.5rem;">
-            <div style="font-weight:bold;">▸ How-to: AQUA MFA</div>
-            <div>How to buy or sell your mfas on AQUA MFA, the shop I co-own &lt;3</div>
-        </div>
-        <div class="step" data-href="https://secure.watchdog.gay" style="margin:0.8rem 0 0.4rem 0; border-top:1px solid #333; padding-top:0.5rem;">
-            <div style="font-weight:bold;">▸ How to secure a MFA you bought?</div>
-            <div>An (unfinished) guide so you never lock em!</div>
-        </div>
-        
-        <div class="step" data-href="https://Watchdog.gay/fixmyau" style="margin:0.8rem 0 0.4rem 0; border-top:1px solid #333; padding-top:0.5rem;">
-            <div style="font-weight:bold;">▸ Fix issues with Myau login</div>
-            <div>Login does nothing? Connection error? Finally a fix for these frustrating errors</div>
-        </div>
-       <div class="step" data-href="https://Watchdog.gay/javafix" style="margin:0.8rem 0 0.4rem 0; border-top:1px solid #333; padding-top:0.5rem;">
-            <div style="font-weight:bold;">▸ "Auth servers are down" - "Use a jdk for scripting" (DOWNLOAD CURRENTLY DEAD)</div>
-            <div>A guide to install a more up-to-date and feature-rich version of JAVA to fix these errors</div>
-        </div>
-    </div>
-
-    <div class="one-line"></div>
-
-    <!-- ==================== [contact] ==================== -->
-    <div class="section">
-        <div class="section-title">[contact]</div>
-        <div style="margin-top:0.4rem;">
-        </div>
-        <div style="margin-top:0.6rem;">
-            <img src="https://cdn-icons-png.flaticon.com/32/5968/5968756.png" alt="Discord" class="logo">
-            <a2 href="https://discord.gg/whCaTa6YWt" target="_self">discord.gg/confighub</a2>
-        </div>
-    </div>
-
-    <div class="one-line"></div>
-
-    <!-- ==================== [about] ==================== -->
-    <div class="section">
-        <div class="section-title">[about]</div>
-        <ul>
-            <li>- A website made by Khadow, no ai trust</li>
-            <li>- Confighub Reborn - A concept from Zambos</li>
-            <li>- A copy of minesense.pub - Arithmo plz come back we need you</li>
-        </ul>
-    </div>
-
-</div>
-
-<script>
-    document.querySelectorAll('.step').forEach(step => {
-        step.addEventListener('click', function() {
-            const href = this.getAttribute('data-href');
-            if (href) {
-                window.location.href = href;
-            }
+    <script>
+        document.querySelectorAll('.step').forEach(step => {
+            step.addEventListener('click', function () {
+                const href = this.getAttribute('data-href');
+                if (href) {
+                    window.location.href = href;
+                }
+            });
         });
-    });
-</script>
+    </script>
 
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
