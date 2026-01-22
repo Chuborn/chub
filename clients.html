@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1EZ5RPGFP7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1EZ5RPGFP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-1EZ5RPGFP7');
-</script>
+        gtag('config', 'G-1EZ5RPGFP7');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>watchdog.gay - client list</title>
@@ -28,49 +29,84 @@
     <link href="https://fonts.cdnfonts.com/css/vcr-osd-mono" rel="stylesheet">
 
     <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            background:#000;
-            color:#fff;
-            font-family: 'Perfect DOS VGA 437', monospace;
-            font-size:1.2rem;
-            line-height:1.5;
-            font-weight: 500;             
-            padding:1.5rem;
-            min-height:100vh;
-            display:flex;
-            justify-content:flex-start;
-            align-items:flex-start;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .wrapper { width:100%; }
+
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Perfect DOS VGA 437', monospace;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            font-weight: 500;
+            padding: 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .wrapper {
+            width: 100%;
+        }
 
         h1 {
-            font-size:2rem;
-            letter-spacing:1px;
-            text-align:left;
-            line-height:1.2;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            text-align: left;
+            line-height: 1.2;
         }
 
-        .section { margin-bottom:1.4rem; }
+        .section {
+            margin-bottom: 1.4rem;
+        }
+
         .section-title {
-            color:#fff;              
-            font-size:1.2rem;
-            margin-bottom:0.35rem;
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 0.35rem;
         }
+
         .petit {
-            color:#fff;              
-            font-size:1.05rem;
+            color: #fff;
+            font-size: 1.05rem;
         }
 
-        ul { list-style:none; padding-left:0; }
-        li { margin:0.25rem 0; }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
 
-        a { color:#fff}
-        desc { color: #fff; font-weight: 500 }
+        li {
+            margin: 0.25rem 0;
+        }
 
-        .price { color:#fff; }        
-        .warning { color:#f44; }      
-        .logo { height:1em; vertical-align:middle; margin:0 0.2em; }
+        a {
+            color: #fff
+        }
+
+        desc {
+            color: #fff;
+            font-weight: 500
+        }
+
+        .price {
+            color: #fff;
+        }
+
+        .warning {
+            color: #f44;
+        }
+
+        .logo {
+            height: 1em;
+            vertical-align: middle;
+            margin: 0 0.2em;
+        }
+
         .khadow {
             background: linear-gradient(90deg, #0066ff, #00ccff, #0066ff);
             background-size: 200% 100%;
@@ -79,65 +115,361 @@
             background-clip: text;
             animation: fadeBlue 3s ease-in-out infinite;
         }
-        @keyframes fadeBlue {
-            0% { background-position: 0% center; }
-            50% { background-position: 100% center; }
-            100% { background-position: 0% center; }
-        }
-        .client-item { cursor:pointer; transition: background 0.2s, box-shadow 0.2s; font-size: 0.95rem; }
-        .client-item:hover { background: rgba(0, 102, 255, 0.15); box-shadow: 0 0 10px rgba(0, 102, 255, 0.3); }
 
-        .one-line { height:1.5rem; }   
+        @keyframes fadeBlue {
+            0% {
+                background-position: 0% center;
+            }
+
+            50% {
+                background-position: 100% center;
+            }
+
+            100% {
+                background-position: 0% center;
+            }
+        }
+
+        .one-line {
+            height: 1.5rem;
+        }
+
+        /* Expandable client items */
+        details.client-item {
+            margin: 0.3rem 0;
+            border-left: 2px solid #333;
+            padding-left: 0.5rem;
+        }
+
+        details.client-item summary {
+            cursor: pointer;
+            font-weight: bold;
+            user-select: none;
+            display: block;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: background 0.2s, box-shadow 0.2s, padding-left 0.2s;
+        }
+
+        details.client-item summary::before {
+            content: "▸ ";
+            display: inline-block;
+            transition: transform 0.3s;
+            margin-right: 0.3rem;
+        }
+
+        details.client-item[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        details.client-item summary:hover {
+            background: rgba(0, 102, 255, 0.15);
+            box-shadow: 0 0 10px rgba(0, 102, 255, 0.3);
+            padding-left: 0.5rem;
+        }
+
+        details.client-item[open] summary {
+            margin-bottom: 0.5rem;
+        }
+
+        details.client-item> :not(summary) {
+            animation: slideDown 0.2s ease-out;
+        }
+
+        .client-content {
+            padding: 0.5rem 0 0.5rem 1rem;
+            border-left: 2px solid #0066ff;
+            margin-left: 0.5rem;
+        }
+
+        .info-row {
+            display: grid;
+            grid-template-columns: 12rem 1fr;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .info-label {
+            color: #888;
+        }
+
+        .info-value {
+            color: #fff;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+            }
+
+            to {
+                opacity: 1;
+                max-height: 500px;
+            }
+        }
     </style>
 </head>
+
 <body>
-<div class="wrapper">
+    <div class="wrapper">
 
-    <h1>Watchdog.gay</h1>
-    <div class="section">
-        <div>By <l class="khadow">Khadow </l>with love</div>
-    <div class="petit">These are ordered by categories and inside of them by personal preference</div>
-    <div class="petit">Click on a client to access it's review - in which you can find download, links, showcase</div>
-</div>
+        <h1>Watchdog.gay</h1>
+        <div class="section">
+            <div>By <l class="khadow">Khadow </l>with love</div>
+            <div class="petit">These are ordered by categories and inside of them by personal preference</div>
+            <div class="petit">Click on a client to access it's review - in which you can find download, links, showcase
+            </div>
+        </div>
 
-    <div class="section">
-        <div class="section-title">[ghost clients]</div>
-        <div class="client-item" data-href="/files/reviews/slinky.html">[9/10][$75/year] Slinky</div>
-        <div class="client-item" data-href="/files/reviews/vape.html">[6/10][$35] Vape</div>
-        <div class="client-item" data-href="/files/reviews/drip.html">[6/10][$100] Drip Lite</div>
-        <div class="client-item" data-href="/files/reviews/B3.html">[5/10][FREE] raven B3</div>
+        <div class="section">
+            <div class="section-title">[ghost clients]</div>
 
-    </div>
-    <!-- ==================== [blatant client] ==================== -->
+            <details class="client-item">
+                <summary>[9/10][$75/year] Slinky</summary>
+                <div class="client-content">
+                    <div class="info-row"><span class="info-label">Supported versions:</span><span
+                            class="info-value">1.7/1.8 - Injectable / Windows + Linux</span></div>
+                    <div class="info-row"><span class="info-label">Pros</span><span class="info-value">Crazy good
+                            modules (top of the line lag modules, best backtrack, etc)</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Cons</span><span class="info-value">Very expensive,
+                            no lifetime options nor screenshare bypass
+                        </span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Price:</span><span class="info-value">$75/year</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Conclusion:</span><span class="info-value">The top
+                            end of ghost cheating
+                        </span></div>
+
+                </div>
+            </details>
+
+            <details class="client-item">
+                <summary>[6/10][$35] Vape</summary>
+                <div class="client-content">
+                    <div class="info-row"><span class="info-label">Supported versions:</span><span
+                            class="info-value">1.7/1.8/1.12.2/1.16.5/1.21.4/1.21.11 - Injectable</span></div>
+                    <div class="info-row"><span class="info-label">Pros:</span><span class="info-value">Decent for the
+                            price, many modules and version supported</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Cons:</span><span class="info-value">Modules aren't
+                            crazy</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Price:</span><span class="info-value">$35</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Conclusion:</span><span class="info-value">
+                            Not the best but for the price, it's a decent choice</span></div>
+                </div>
+            </details>
+
+            <details class="client-item">
+                <summary>[6/10][$100] Drip Lite</summary>
+                <div class="client-content">
+                    <div class="info-row"><span class="info-label">Supported versions:</span><span
+                            class="info-value">Too many to list -> <a href="https://drip.gg/products">full list</a> -
+                            Injectable</span></div>
+                    <div class="info-row"><span class="info-label">Pros</span><span class="info-value">Excellent
+                            visuals, high quality modules, screenshare bypasses, lifetime options</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Cons</span><span class="info-value">Very expensive,
+                            lack of updates (not a huge deal), webgui only, </span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Price:</span><span class="info-value">$100</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Conclusion:</span><span class="info-value">A client
+                            made for those that wish to hide they are cheating</span></div>
+                </div>
+            </details>
+
+            <details class="client-item">
+                <summary>[4/10][FREE] raven B3</summary>
+                <div class="client-content">
+                    <div class="info-row"><span class="info-label">Native version:</span><span class="info-value">1.8.9
+                            - Forge mod</span></div>
+                    <div class="info-row"><span class="info-label">Pros:</span><span class="info-value">Free,
+                            decent</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Cons:</span><span class="info-value">Fairly old /
+                            outdated, compatibility issues</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Price:</span><span class="info-value">FREE</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Conclusion:</span><span class="info-value">Why not
+                            test it?
+                        </span></div>
+                    <div class="info-row"><span class="info-label">Download:</span><span class="info-value"><a
+                                href="files/ravenb3.jar">Download</a>
+                        </span></div>
+                </div>
+            </details>
+        </div>
+        <!-- ==================== [blatant client] ==================== -->
 
 
 
-    <div class="section">
-        <div class="section-title">[blatant clients]</div>
-        <div class="client-item" data-href="/files/reviews/B4.html">[9/10][$50] Raven B4</div>
-        <div class="client-item" data-href="/files/reviews/rise.html">[7/10][$33] Rise</div>
-        <div class="client-item" data-href="/files/reviews/astralis.html">[7/10][$30] Astralis</div>
-        <div class="client-item" data-href="/files/reviews/neon.html">[5/10][$23] Neon</div>
-        <div class="client-item" data-href="/files/reviews/myau.html">[4/10][$24] Myau*</div>
-        <div class="client-item" data-href="/files/reviews/opai.html">[2/10][$20] Opai*</div>
-        <div class="client-item" data-href="/files/reviews/ambient2.png">[0/10][$25] Ambient</div>
+        <div class="section">
+            <div class="section-title">[blatant clients]</div>
+
+            <details class="client-item">
+                <summary>[9/10][$50] Raven B4</summary>
+                <div class="client-content">
+                    <div class="info-row"><span class="info-label">Native version:</span><span
+                            class="info-value">1.8.9</span></div>
+                    <div class="info-row"><span class="info-label">Pros:</span><span class="info-value">Good bypasses
+                            and performance, scripting support, solid visuals, active dev and community</span></div>
+                    <div class="info-row"><span class="info-label">Cons:</span><span class="info-value">Even with a
+                            price drop, this can be dissuasive for some, fairly barebone (no alt manager, etc)</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Price:</span><span class="info-value">$50</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Conclusion:</span><span class="info-value">My client
+                            of choice for blatant cheating</span></div>
+                </div>
+            </details>
+
+            <details class="client-item">
+                <summary>[7/10][$33] Rise</summary>
+                <div class="client-content">
+                    <div class="info-row"><span class="info-label">Native version:</span><span
+                            class="info-value">1.8.9</span></div>
+                    <div class="info-row"><span class="info-label">ViaVersion:</span><span class="info-value">Yes (up to
+                            1.21.5)</span></div>
+                    <div class="info-row"><span class="info-label">Price:</span><span class="info-value">$33 (5% off
+                            with code Khadow)</span></div>
+                    <div class="info-row"><span class="info-label">Focus:</span><span class="info-value">Multiserver
+                            bypasses</span></div>
+                </div>
+            </details>
+
+            <details class="client-item">
+                <summary>[7/10][$30] Astralis</summary>
+                <div class="client-content">
+                    <div class="info-row"><span class="info-label">Native version:</span><span
+                            class="info-value">1.8.9</span></div>
+                    <div class="info-row"><span class="info-label">ViaVersion:</span><span class="info-value">Yes</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Price:</span><span class="info-value">$30</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Focus:</span><span class="info-value">Blatant
+                            cheating</span></div>
+                </div>
+            </details>
+
+            <details class="client-item">
+                <summary>[5/10][$23] Neon</summary>
+                <div class="client-content">
+                    <div class="info-row"><span class="info-label">Native version:</span><span
+                            class="info-value">1.8.9</span></div>
+                    <div class="info-row"><span class="info-label">ViaVersion:</span><span class="info-value">Yes</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Price:</span><span class="info-value">$23</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Focus:</span><span class="info-value">Blatant
+                            cheating</span></div>
+                </div>
+            </details>
+
+            <details class="client-item">
+                <summary>[4/10][$24] Myau*</summary>
+                <div class="client-content">
+                    <div class="info-row"><span class="info-label">Native version:</span><span
+                            class="info-value">1.8.9</span></div>
+                    <div class="info-row"><span class="info-label">ViaVersion:</span><span class="info-value">Yes</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Price:</span><span class="info-value">$24</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Focus:</span><span class="info-value">Hypixel
+                            blatant</span></div>
+                </div>
+            </details>
+
+            <details class="client-item">
+                <summary>[2/10][$20] Opai*</summary>
+                <div class="client-content">
+                    <div class="info-row"><span class="info-label">Native version:</span><span
+                            class="info-value">1.8.9</span></div>
+                    <div class="info-row"><span class="info-label">ViaVersion:</span><span class="info-value">Yes</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Price:</span><span class="info-value">$20</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Focus:</span><span class="info-value">Blatant
+                            cheating</span></div>
+                </div>
+            </details>
+
+            <details class="client-item">
+                <summary>[0/10][$25] Ambient</summary>
+                <div class="client-content">
+                    <div class="info-row"><span class="info-label">Native version:</span><span
+                            class="info-value">1.8.9</span></div>
+                    <div class="info-row"><span class="info-label">ViaVersion:</span><span
+                            class="info-value">Unknown</span></div>
+                    <div class="info-row"><span class="info-label">Price:</span><span class="info-value">$25</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Focus:</span><span class="info-value">Blatant
+                            cheating</span></div>
+                </div>
+            </details>
+
+            <div class="petit">* these clients have a low rating due to a lack of update leading to a degraded
+                experience</div>
+        </div>
 
 
-        <div class="petit">* these clients have a low rating due to a lack of update leading to a degraded experience</div>
-    </div>
+        <div class="section">
+            <div class="section-title">[hybrid clients]</div>
+
+            <details class="client-item">
+                <summary>[9/10][$50] Raven B4</summary>
+                <div class="client-content">
+                    <div class="info-row"><span class="info-label">Native version:</span><span
+                            class="info-value">1.8.9</span></div>
+                    <div class="info-row"><span class="info-label">ViaVersion:</span><span class="info-value">Yes (up to
+                            1.21.5)</span></div>
+                    <div class="info-row"><span class="info-label">Price:</span><span class="info-value">$50</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Focus:</span><span class="info-value">Hybrid,
+                            Hypixel</span></div>
+                </div>
+            </details>
+
+            <details class="client-item">
+                <summary>[9/10][$75/year] Slinky</summary>
+                <div class="client-content">
+                    <div class="info-row"><span class="info-label">Native version:</span><span
+                            class="info-value">1.8.9</span></div>
+                    <div class="info-row"><span class="info-label">ViaVersion:</span><span class="info-value">Yes</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Price:</span><span class="info-value">$75/year</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Focus:</span><span class="info-value">Hybrid, Ghost,
+                            Hypixel</span></div>
+                </div>
+            </details>
+
+            <details class="client-item">
+                <summary>[7/10][$24] Myau*</summary>
+                <div class="client-content">
+                    <div class="info-row"><span class="info-label">Native version:</span><span
+                            class="info-value">1.8.9</span></div>
+                    <div class="info-row"><span class="info-label">ViaVersion:</span><span class="info-value">Yes</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Price:</span><span class="info-value">$24</span>
+                    </div>
+                    <div class="info-row"><span class="info-label">Focus:</span><span class="info-value">Hybrid,
+                            Hypixel</span></div>
+                </div>
+            </details>
+
+            <div class="petit">* Myau has a higher rating as a hybrid client due to it's lack of update not affecting
+                legit cheating</div>
+        </div>
+
+        <div class="one-line"></div>
 
 
-    <div class="section">
-        <div class="section-title">[hybrid clients]</div>
-        <div class="client-item" data-href="/files/reviews/B4.html">[9/10][$50] Raven B4</div>
-        <div class="client-item" data-href="/files/reviews/slinky.html">[9/10][$75/year] Slinky</div>
-        <div class="client-item" data-href="/files/reviews/myau.html">[7/10][$24] Myau*</div>
-
-
-        <div class="petit">* Myau has a higher rating as a hybrid client due to it's lack of update not affecting legit cheating</div>
-    </div>
-
-    <div class="one-line"></div>
 
 
 
@@ -162,10 +494,8 @@
 
 
 
-
-
-    <!-- ==================== [ghost client] ==================== -->
-   <!-- <div class="section">
+        <!-- ==================== [ghost client] ==================== -->
+        <!-- <div class="section">
         <div class="section-title">[my recommendations]</div>
 
         <div>[$24] Myau [hypixel] [hybrid-blatant]</div>
@@ -178,77 +508,30 @@
 
 
     <!-- ==================== [contact] ==================== -->
-    <div class="section">
-        <div class="section-title">[contact]</div>
-        <div style="margin-top:0.4rem;">
+        <div class="section">
+            <div class="section-title">[contact]</div>
+            <div style="margin-top:0.4rem;">
+            </div>
+            <div style="margin-top:0.6rem;">
+                <img src="https://cdn-icons-png.flaticon.com/32/5968/5968756.png" alt="Discord" class="logo">
+                <a href="https://discord.gg/whCaTa6YWt" target="_self">discord.gg/confighub</a>
+            </div>
         </div>
-        <div style="margin-top:0.6rem;">
-            <img src="https://cdn-icons-png.flaticon.com/32/5968/5968756.png" alt="Discord" class="logo">
-            <a href="https://discord.gg/whCaTa6YWt" target="_self">discord.gg/confighub</a>
+
+        <div class="one-line"></div>
+
+        <!-- ==================== [about] ==================== -->
+        <div class="section">
+            <div class="section-title">[credits]</div>
+            <ul>
+                <li>- Me, Khadow, for making this lol</li>
+            </ul>
         </div>
+
     </div>
 
-    <div class="one-line"></div>
 
-    <!-- ==================== [about] ==================== -->
-    <div class="section">
-        <div class="section-title">[credits]</div>
-        <ul>
-            <li>- Me, Khadow, for making this lol</li>
-        </ul>
-    </div>
-
-</div>
-
-<script>
-    document.querySelectorAll('.client-item').forEach(item => {
-        item.addEventListener('click', function() {
-            const href = this.getAttribute('data-href');
-            if (href) {
-                window.location.href = href;
-            }
-        });
-    });
-</script>
 
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
