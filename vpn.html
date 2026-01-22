@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1EZ5RPGFP7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1EZ5RPGFP7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-1EZ5RPGFP7');
-</script>
+        gtag('config', 'G-1EZ5RPGFP7');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Watchdog.gay - Token login guide</title>
@@ -28,51 +29,97 @@
     <link href="https://fonts.cdnfonts.com/css/vcr-osd-mono" rel="stylesheet">
 
     <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            background:#000;
-            color:#fff;
-            font-family: 'Perfect DOS VGA 437', monospace;
-            font-size:1.2rem;
-            line-height:1.5;
-            font-weight: 500;             
-            padding:1.5rem;
-            min-height:100vh;
-            display:flex;
-            justify-content:flex-start;
-            align-items:flex-start;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .wrapper { width:100%; }
+
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Perfect DOS VGA 437', monospace;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            font-weight: 500;
+            padding: 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .wrapper {
+            width: 100%;
+        }
 
         h1 {
-            font-size:2rem;
-            letter-spacing:1px;
-            text-align:left;
-            line-height:1.2;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            text-align: left;
+            line-height: 1.2;
         }
 
-        .section { margin-bottom:1.4rem; }
+        .section {
+            margin-bottom: 1.4rem;
+        }
+
         .section-title {
-            color:#fff;              
-            font-size:1.2rem;
-            margin-bottom:0.35rem;
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 0.35rem;
         }
+
         .petit {
-            color:#fff;              
-            font-size:1.05rem;
+            color: #fff;
+            font-size: 1.05rem;
         }
 
-        ul { list-style:none; padding-left:0; }
-        li { margin:0.25rem 0; }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
 
-        a { color:#fff}
-        a2 { color:#0066ff; text-decoration:none; text-shadow: 0 0 2px #0066ff; display:inline; cursor:pointer; }
-        a2:hover { text-decoration:underline; text-shadow: 0 0 15px #0066ff, 0 0 25px #00ccff; }
-        desc { color: #fff; font-weight: 500 }
-        r { color:#f44; }      
+        li {
+            margin: 0.25rem 0;
+        }
 
-        .price { color:#fff; }        
-        .logo { height:1em; vertical-align:middle; margin:0 0.2em; }
+        a {
+            color: #fff
+        }
+
+        a2 {
+            color: #0066ff;
+            text-decoration: none;
+            text-shadow: 0 0 2px #0066ff;
+            display: inline;
+            cursor: pointer;
+        }
+
+        a2:hover {
+            text-decoration: underline;
+            text-shadow: 0 0 15px #0066ff, 0 0 25px #00ccff;
+        }
+
+        desc {
+            color: #fff;
+            font-weight: 500
+        }
+
+        r {
+            color: #f44;
+        }
+
+        .price {
+            color: #fff;
+        }
+
+        .logo {
+            height: 1em;
+            vertical-align: middle;
+            margin: 0 0.2em;
+        }
+
         .khadow {
             background: linear-gradient(90deg, #0066ff, #00ccff, #0066ff);
             background-size: 200% 100%;
@@ -81,54 +128,87 @@
             background-clip: text;
             animation: fadeBlue 3s ease-in-out infinite;
         }
+
         @keyframes fadeBlue {
-            0% { background-position: 0% center; }
-            50% { background-position: 100% center; }
-            100% { background-position: 0% center; }
+            0% {
+                background-position: 0% center;
+            }
+
+            50% {
+                background-position: 100% center;
+            }
+
+            100% {
+                background-position: 0% center;
+            }
         }
 
-        .one-line { height:1.5rem; }   
-
-        /* dropdown / FAQ-style blocks, styled to match main site */
-        details {
-            margin: 0.8rem 0 0.4rem 0;
-            border-top: 1px solid #333;
-            padding-top: 0.5rem;
+        .one-line {
+            height: 1.5rem;
         }
 
-        summary {
+        /* Expandable items - matching clients page */
+        details.vpn-item {
+            margin: 0.3rem 0;
+            border-left: 2px solid #333;
+            padding-left: 0.5rem;
+        }
+
+        details.vpn-item summary {
             cursor: pointer;
             font-weight: bold;
             user-select: none;
             display: block;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             letter-spacing: 0.5px;
             transition: background 0.2s, box-shadow 0.2s, padding-left 0.2s;
         }
 
-        summary::before {
+        details.vpn-item summary::before {
             content: "▸ ";
             display: inline-block;
             transition: transform 0.3s;
             margin-right: 0.3rem;
         }
 
-        details[open] summary::before {
+        details.vpn-item[open] summary::before {
             transform: rotate(90deg);
         }
 
-        summary:hover {
+        details.vpn-item summary:hover {
             background: rgba(0, 102, 255, 0.15);
             box-shadow: 0 0 10px rgba(0, 102, 255, 0.3);
             padding-left: 0.5rem;
         }
 
-        details[open] summary {
+        details.vpn-item[open] summary {
             margin-bottom: 0.5rem;
         }
 
-        details > :not(summary) {
+        details.vpn-item> :not(summary) {
             animation: slideDown 0.2s ease-out;
+        }
+
+        .vpn-content {
+            padding: 0.5rem 0 0.5rem 1rem;
+            border-left: 2px solid #0066ff;
+            margin-left: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .info-row {
+            display: grid;
+            grid-template-columns: 14rem 1fr;
+            gap: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .info-label {
+            color: #888;
+        }
+
+        .info-value {
+            color: #fff;
         }
 
         @keyframes slideDown {
@@ -136,6 +216,7 @@
                 opacity: 0;
                 max-height: 0;
             }
+
             to {
                 opacity: 1;
                 max-height: 500px;
@@ -143,95 +224,102 @@
         }
     </style>
 </head>
+
 <body>
-<div class="wrapper">
+    <div class="wrapper">
 
-    <h1>Watchdog.gay</h1>
-    <div class="section">
-        <div>By <l class="khadow">Khadow </l>with love</div>
-    </div>
-
-
-    <!-- ==================== [fix auth] ==================== -->
-    <div class="section">
-        <div class="section-title">[Why use a VPN?]</div>
-        <div>To prevent this lmao</div>
-         <img src="files/secban.png" alt="Security ban screenshot" style="width:100%;max-width:620px;height:320px;display:block;margin-top:0.6rem;object-fit:fill;">
-    </div>
-
-    <!-- ==================== [How to format tokens] ==================== -->
-
-    <!-- ==================== [options] ==================== -->
-    <details>
-        <summary>[free vpn]</summary>
-        <div>There are 2 main free vpn I would recommend. These are not crazy but should work and well, it's free</div>
-        <div>Windscribe - 15g/month at most (you can make multiple acc), it works decently well</div>
-        <div><a2 href="https://windscribe.com" target="_self">windscribe.com</a2></div>
-        <div>Proton is also a decent vpn but except more sec ban with it due to it's popularity</div>
-        <div><a2 href="https://protonvpn.com" target="_self">protonvpn.com</a2></div>
-    </details>
-
-    <details>
-        <summary>[the best vpn for minecraft cheating (in my opinion)]</summary>
-        <div>Liquidproxy</div>
-        <div>Why is it the best? Because you don't have to think about it</div>
-        <div>Liquidproxy gives you a server ip to put in minecraft and every reconnect uses a new ip</div>
-        <div><a2 href="https://liquidproxy.net" target="_self">liquidproxy.net</a2></div>
-    </details>
-
-    <details>
-        <summary>[a vpn not just for minecraft]</summary>
-        <div>PIA: Used to main it, it is a pretty good vpn for minecraft but also general use and can be found for quite cheap</div>
-        <div>It can be foud for dirt cheap on you can play it safe and buy from them directly</div>
-        <div><a2 href="https://privateinternetaccess.com" target="_self">privateinternetaccess.com</a2></div>
-
-    </details>
-
-
-
-
-
-    <div class="one-line"></div>
-
-    <div class="section">
-        <div class="section-title">[contact]</div>
-        <div style="margin-top:0.4rem;">
+        <h1>Watchdog.gay</h1>
+        <div class="section">
+            <div>By <l class="khadow">Khadow </l>with love</div>
         </div>
-        <div style="margin-top:0.6rem;">
-            <img src="https://cdn-icons-png.flaticon.com/32/5968/5968756.png" alt="Discord" class="logo">
-            <a2 href="https://discord.gg/whCaTa6YWt" target="_self">discord.gg/confighub</a2>
+
+
+        <!-- ==================== [fix auth] ==================== -->
+        <div class="section">
+            <div class="section-title">[Why use a VPN?]</div>
+            <div>To prevent this lmao</div>
+            <img src="files/secban.png" alt="Security ban screenshot"
+                style="width:100%;max-width:620px;height:320px;display:block;margin-top:0.6rem;object-fit:fill;">
         </div>
+
+        <!-- ==================== [How to format tokens] ==================== -->
+
+        <!-- ==================== [options] ==================== -->
+        <details class="vpn-item">
+            <summary>[free vpn]</summary>
+            <div class="vpn-content">
+                <div>There are 2 main free vpn I would recommend. These are not crazy but should work and well, it's
+                    free</div>
+                <div class="info-row"><span class="info-label">Windscribe:</span><span class="info-value">15g/month at
+                        most (you can make multiple acc), it works decently well</span></div>
+                <div>
+                    <a2 href="https://windscribe.com" target="_self">windscribe.com</a2>
+                </div>
+                <div class="info-row"><span class="info-label">Proton:</span><span class="info-value">Also decent but
+                        expect more sec ban with it due to it's popularity</span></div>
+                <div>
+                    <a2 href="https://protonvpn.com" target="_self">protonvpn.com</a2>
+                </div>
+            </div>
+        </details>
+
+        <details class="vpn-item">
+            <summary>[the best vpn for minecraft cheating (in my opinion)]</summary>
+            <div class="vpn-content">
+                <div class="info-row"><span class="info-label">Name:</span><span class="info-value">Liquidproxy</span>
+                </div>
+                <div class="info-row"><span class="info-label">Why is it the best?</span><span
+                        class="info-value">Because you don't have to think about it</span></div>
+                <div class="info-row"><span class="info-label">How it works:</span><span class="info-value">Gives you a
+                        server ip to put in minecraft and every reconnect uses a new ip</span></div>
+                <div>
+                    <a2 href="https://liquidproxy.net" target="_self">liquidproxy.net</a2>
+                </div>
+            </div>
+        </details>
+
+        <details class="vpn-item">
+            <summary>[a vpn not just for minecraft]</summary>
+            <div class="vpn-content">
+                <div class="info-row"><span class="info-label">Name:</span><span class="info-value">PIA (Private
+                        Internet Access)</span></div>
+                <div class="info-row"><span class="info-label">Info:</span><span class="info-value">Used to main it, it
+                        is a pretty good vpn for minecraft but also general use</span></div>
+                <div class="info-row"><span class="info-label">Price:</span><span class="info-value">Can be found for
+                        quite cheap</span></div>
+                <div>
+                    <a2 href="https://privateinternetaccess.com" target="_self">privateinternetaccess.com</a2>
+                </div>
+            </div>
+        </details>
+
+
+
+
+
+        <div class="one-line"></div>
+
+        <div class="section">
+            <div class="section-title">[contact]</div>
+            <div style="margin-top:0.4rem;">
+            </div>
+            <div style="margin-top:0.6rem;">
+                <img src="https://cdn-icons-png.flaticon.com/32/5968/5968756.png" alt="Discord" class="logo">
+                <a2 href="https://discord.gg/whCaTa6YWt" target="_self">discord.gg/confighub</a2>
+            </div>
+        </div>
+
+        <div class="one-line"></div>
+
+        <!-- ==================== [about] ==================== -->
+        <div class="section">
+            <div class="section-title">[about]</div>
+            <ul>
+                <li>- Me, Khadow, for making this lol</li>
+            </ul>
+        </div>
+
     </div>
-
-    <div class="one-line"></div>
-
-    <!-- ==================== [about] ==================== -->
-    <div class="section">
-        <div class="section-title">[about]</div>
-        <ul>
-            <li>- Me, Khadow, for making this lol</li>
-        </ul>
-    </div>
-
-</div>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
